@@ -1,11 +1,9 @@
 package com.co.kr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown=true)
 public class OAuthToken {
 	private String id_token;
 	private String access_token;

@@ -20,6 +20,7 @@ import com.co.kr.model.KakaoProfile;
 import com.co.kr.model.OAuthToken;
 import com.co.kr.model.User;
 import com.co.kr.service.UserService;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,7 +29,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class UserController {
 
-	
 	@Value("${cos.key}")
 	private String cosKey;
 	
@@ -37,7 +37,6 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	
 	
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
@@ -49,9 +48,9 @@ public class UserController {
 		return "user/loginForm";
 	}
 	
-	@GetMapping("/auth/kakao/callback") 
+	@GetMapping("/auth/kakao/callback")
 	public String kakaoCallback(String code) {
-			
+				
 		RestTemplate rt = new RestTemplate();
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -59,7 +58,7 @@ public class UserController {
 		
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
-		params.add("client_id", "4a41e1def8e3ea9ff4de1b37ee6904ca");
+		params.add("client_id", "6b64e863442b421761acc71d195bcf8b");
 		params.add("redirect_uri", "http://localhost:8000/auth/kakao/callback");
 		params.add("code", code);
 		
@@ -145,4 +144,3 @@ public class UserController {
 	  return "user/updateForm";
 	}
 }
-

@@ -1,15 +1,19 @@
 package com.co.kr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class KakaoProfile {
-	public Integer Id;
+	public Long Id;
 	public String connected_at;
 	public Properties properties;
 	public KakaoAccount kakao_account;
 
 	@Data
+	@JsonIgnoreProperties(ignoreUnknown = true)
 	public class Properties {
 		public String nickname;
 		public String profile_image;
@@ -17,6 +21,7 @@ public class KakaoProfile {
 	}
 
 	@Data
+	@JsonIgnoreProperties(ignoreUnknown = true)
 	public class KakaoAccount {
 		public Boolean profile_needs_agreement;
 		public Profile profile;
@@ -27,6 +32,7 @@ public class KakaoProfile {
 		public String email;
 
 		@Data
+		@JsonIgnoreProperties(ignoreUnknown = true)
 		public class Profile {
 			public String nickname;
 			public String thumbnail_image_url;
