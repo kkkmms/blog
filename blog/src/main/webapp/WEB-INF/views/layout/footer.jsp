@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 <br />
 <div class="jumbotron text-center" style="margin-bottom: 0">
-	<p>Created by KMS</p>
-	<p>📞 010-9378-8646</p>
-	<p>🏠 서울 성북구 솔샘로25길 11-11</p>
+	<p>KMS-Blog</p>
+	<p>📞 010-1234-5678</p>
+	<p>🏠 서울특별시 강북구 수유동 192-59</p>
 </div>
 
 </body>
